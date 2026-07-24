@@ -18,3 +18,15 @@ initial_ppm = np.array([80.0, 0.0, 0.0, 0.0, 0.0])
 ppm_matrix[0, :] = initial_ppm
 
 diffusion_rate = 0.20
+
+# Simulation loop
+for t in range(1, num_rows):
+    ppm_matrix[t, :] = ppm_matrix[t - 1, :]
+    
+    for i in range(1, num_cols - 1):
+                                                                                      
+        diffusion = diffusion_rate * (ppm_matrix[t-1, i-1] - 2 * ppm_matrix[t-1, i] + ppm_matrix[t-1, i+1])
+        
+        ppm_matrix[t, i] = ppm_matrix[t-1, i] + diffusion
+
+print(ppm_matrix)
