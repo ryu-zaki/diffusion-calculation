@@ -64,7 +64,7 @@ for t_idx in range(num_rows):
 
 # Requirement D: Check Innermost Core / Dough Progress
 # (Node 1 at 2-inch or Node 2 at 4-inch vs 50°C target by Minute 10)
-core_temp_min10 = temp_matrix[-1, 1]  # At 2-inch position at Minute 10
+core_temp_min10 = temp_matrix[-1, 3]  # At 2-inch position at Minute 10
 
 # Display Findings
 print("--- ANALYSIS FINDINGS ---")
